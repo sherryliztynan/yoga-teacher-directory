@@ -1,7 +1,7 @@
 import React from 'react'
-import Error from '../../components/error/error'
-import Title from '../components/title/title'
-import './errorpage.css'
+import Error from '../components/Error/error'
+import Title from '../components/Title/title'
+
 
 export default () => (
   <div className="error">

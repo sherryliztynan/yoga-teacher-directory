@@ -1,5 +1,6 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import * as ReactDOM from "react-dom";
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css';
 
 import TeacherSearch from "./pages/TeacherSearch";
@@ -10,11 +11,11 @@ function App() {
   return (
     <React.Fragment>
       <Router>
-        <Switch>
+        <Routes>
           <Route exact path="/" component={TeacherSearch} />
           <Route exact path="/create" component={CreateTeacher} />
           <Route component={ErrorPage} />
-        </Switch>
+        </Routes>
       </Router>
     </React.Fragment>
   );
