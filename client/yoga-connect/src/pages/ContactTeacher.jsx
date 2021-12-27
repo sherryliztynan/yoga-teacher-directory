@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./contactyogateacherpage.css";
-import TeacherInfo from "../../components/TeacherInfo/TeacherInfo";
-import GoBack from "../../components/goback/goback";
-import Title from "../../components/title/title"
+import GoBack from "../components/GoBack/GoBack";
+import Title from "../components/Title/title";
 
 const Teachers = (props) => {
   const [teacher, setTeacher] = useState([])
 
-  const { teacherId } = props.match.params;
+  const { Id } = props.match.params;
   
 
   useEffect(() => {
     const fetchTeachers = async () => {
-      let fetch = await axios.get(`http://localhost:1331/api/YogaTeachers/${teacherId}`)
+      let fetch = await axios.get(`http://localhost:3002/teachers/${Id}`)
 
       setTeacher(fetch.data)
     }
@@ -24,11 +22,11 @@ const Teachers = (props) => {
   <div className="info">
           <Title />
           <div className="profile">
-          <li>First Name: {teacher.nameFirst}</li>
-          <li>Last Name: {teacher.nameLast}</li>
-          <li>Online Availability: {teacher.onlineAvailability}</li>
-          <li>Specialty: {teacher.specialization}</li>
-          <li>Contact Information: {teacher.contactInformation}</li>
+          <li>Name: {teacher.name}</li>
+          <li>Online Availability: {teacher.online_availability}</li>
+          <li>City: {teacher.city}</li>
+          <li>Instagram: {teacher.instagrams}</li>
+          <li>Specialty: {teacher.specialty}</li>
           </div>
           <GoBack />
   </div>
