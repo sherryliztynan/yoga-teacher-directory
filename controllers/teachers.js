@@ -10,46 +10,79 @@ const displayAllTeachers = async (req, res) => {
   return res.send(teachers)
 }
 
+const getTeacherByIdOrName = async (request, response) => {
+  const { identifier } = request.params
+
+  const Teacher = await models.Teachers.findOne({
+    where: {
+      [models.Sequelize.Op.or]: [
+        { id: identifier },
+        { name: { [models.Sequelize.Op.like]: `%${identifier}%` } },
+      ]
+    },
+    // include: [{ model: models.YogaTeachers }]
+  })
+
+  return Teacher
+    ? response.send(Teacher)
+    : response.sendStatus(404)
+}
+
+// const getTeachersBySpecialty = async (request, response) => {
+//   const { identifier } = request.params
+
+//   const specialization = await models.Teachers.findAll({
+//     attributes: ['specialty', 'name'],
+//     where: {
+//       [models.Sequelize.Op.or]: [
+//         { specialty: identifier },
+//       ]
+//     },
+//   })
+
+//   return specialization
+//     ? response.send(specialization)
+//     : response.sendStatus(404)
+// }
+
 const addNewTeacher = async (req, res) => {
-    const newTeacher = models.Teachers
-  
     try {
       const {
-        name, online_availability, city, instagram, specialty
+        name, city, instagram, specialty
       } = req.body
   
-      if (!name || !online_availability || !city || !instagram || !specialty ) {
+      if (!name || !city || !instagram || !specialty ) {
         return res.send('Addition failed. All fields are required')
       }
   
-      await newTeacher.create({
-        name, online_availability, city, instagram, specialty
+      const newTeacher = await models.Teachers.create({
+        name,  city, instagram, specialty
       })
   
-      return res.status(201).redirect('/')
+      return response.status(201).send(newTeacher)
     } catch (error) {
       return res.status(500).send('HTTP Error 500 unable to handle this request')
     }
   }
 
 
-  const updateTeacherCity = async (req, res) => {
+  const updateTeacher= async (req, res) => {
     try {
       const {
-        name, online_availability, city, instagram, specialty
+        name, city, instagram, specialty
       } = req.body
       const { id } = req.params
   
-      if (!name || !online_availability || !city || !instagram || !specialty ) {
+      if (!name || !city || !instagram || !specialty ) {
         return res.status(401).send('Please include all fields: id, name, age, address, gpa, major, image')
       }
   
       const teacher = await models.Teachers.findOne({ where: { id } })
   
-      if (!teacher) return res.send(`Unable to update student #${id}, they do not exist in the database`)
+      if (!teacher) return res.send(`Unable to update teacher #${id}, they do not exist in the database`)
   
       const updatedTeacher = await teacher.update({
-        name, online_availability, city, instagram, specialty
+        name, city, instagram, specialty
       }, { returning: true })
   
       return res.status(201).redirect('/')
@@ -79,6 +112,8 @@ module.exports = {
   errorFunction,
   displayAllTeachers,
   addNewTeacher,
-  updateTeacherCity,
-  deleteTeacher
+  updateTeacher,
+  deleteTeacher,
+  // getTeachersBySpecialty
+  getTeacherByIdOrName
 }

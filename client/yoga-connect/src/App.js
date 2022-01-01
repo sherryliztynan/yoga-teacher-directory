@@ -1,23 +1,23 @@
 import React from 'react'
-import * as ReactDOM from "react-dom";
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import TeacherSearch from "./pages/TeacherSearch";
-import CreateTeacher from "./pages/ManageTeachers";
+import ContactTeacher from "./pages/ContactTeacher";
+import ManageTeachers from "./pages/ManageTeachers";
 import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   return (
-    <React.Fragment>
-      <Router>
-        <Routes>
+    <div className="app">
+      <BrowserRouter>
+        <Switch>
+          <Route path="/teachers/:Id" component={ContactTeacher} />
           <Route exact path="/" component={TeacherSearch} />
-          <Route exact path="/create" component={CreateTeacher} />
-          <Route component={ErrorPage} />
-        </Routes>
-      </Router>
-    </React.Fragment>
+          <Route path="/create" component={ManageTeachers} />
+          <Route path="*" component={ErrorPage} />
+        </Switch>
+      </BrowserRouter>
+    </div>
   );
 }
 

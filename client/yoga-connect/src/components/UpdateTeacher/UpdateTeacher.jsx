@@ -3,16 +3,15 @@ const updateTeacherCity = (id) => {
       (response) => {
         setTeacherList(
           teacherList.map((teacher) => {
-            return val.id == id
+            return teacher.id == id
               ? {
                   id: teacher.id,
                   name: teacher.name,
-                  country: teacher.country,
-                  age: teacher.age,
-                  position: teacher.position,
-                  wage: newWage,
+                  city: teacher.city,
+                  instagram: teacher.instagram,
+                  specialty: teacher.specialty,
                 }
-              : val;
+              : teacher;
           })
         );
       }

@@ -1,7 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import GoBack from "../components/GoBack/GoBack";
 import Title from "../components/Title/title";
+// import { useParams } from "react-router-dom"
+
 
 const Teachers = (props) => {
   const [teacher, setTeacher] = useState([])
@@ -11,7 +14,7 @@ const Teachers = (props) => {
 
   useEffect(() => {
     const fetchTeachers = async () => {
-      let fetch = await axios.get(`http://localhost:3002/teachers/${Id}`)
+      let fetch = await axios.get(`http://localhost:3002/api/teachers/${Id}`)
 
       setTeacher(fetch.data)
     }
@@ -23,9 +26,8 @@ const Teachers = (props) => {
           <Title />
           <div className="profile">
           <li>Name: {teacher.name}</li>
-          <li>Online Availability: {teacher.online_availability}</li>
           <li>City: {teacher.city}</li>
-          <li>Instagram: {teacher.instagrams}</li>
+          <li>Instagram: {teacher.instagram}</li>
           <li>Specialty: {teacher.specialty}</li>
           </div>
           <GoBack />

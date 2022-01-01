@@ -1,11 +1,41 @@
 {
+  "name": "yoga-teacher-directory",
+  "version": "1.0.0",
+  "description": "## Instructions",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "npm run dev:client:build && ./node_modules/.bin/env-cmd ./node_modules/.bin/nodemon index.js",
+    "dev:migrate": "./node_modules/.bin/env-cmd ./node_modules/.bin/sequelize db:migrate --env development --config ./config/sequelize.js",
+    "dev:client": "cd client && npm start",
+    "dev:client:build": "cd client && npm run build",
+    "lint": "./node_modules/.bin/eslint --format codeframe .",
+    "lint:fix": "./node_modules/.bin/eslint --fix --format codeframe .",
+    "dev:client:test": "cd client && npm run test",
+    "dev:server:test": "./node_modules/.bin/env-cmd ./node_modules/.bin/mocha tests/**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackeducation/yoga-teacher-directory.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stackeducation/yoga-teacher-directory/issues"
+  },
+  "homepage": "https://github.com/stackeducation/yoga-teacher-directory#readme",
   "dependencies": {
-    "body-parser": "^1.19.1",
     "cors": "^2.8.5",
-    "eslint": "^8.5.0",
-    "express": "^4.17.2",
-    "mysql": "^2.18.1",
-    "sequelize": "^7.0.0-alpha.2",
-    "sequelize-cli": "^6.3.0"
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.5",
+    "sequelize-cli": "^5.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "env-cmd": "^10.1.0",
+    "eslint": "^7.11.0",
+    "nodemon": "^2.0.2"
   }
 }
