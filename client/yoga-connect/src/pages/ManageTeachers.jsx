@@ -1,11 +1,12 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from 'react'
-import AddTeacher from '../components/AddTeacher/AddTeacher'
-import DisplayTeachers from '../components/DisplayTeachers/DisplayTeachers'
+import ManageTeachersForm from '../components/ManageTeachersForm/ManageTeacherForm'
+import GoBack from '../components/GoBack/GoBack'
+
 
 export default () => (
   <div className="ManageTeachers">
-    <AddTeacher />
-    <DisplayTeachers/>
+    <ManageTeachersForm />
+    <GoBack />
   </div>
 )
