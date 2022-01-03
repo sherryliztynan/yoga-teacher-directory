@@ -1,0 +1,13 @@
+$fade-pink : #FCEADE;
+$pink : #ea526f;
+
+.title {
+    height: 100px;
+    color: $fade-pink;
+    font-family: 'Lucida Sans', italic;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $pink;
+}

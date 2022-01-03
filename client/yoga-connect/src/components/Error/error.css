@@ -1,10 +1,8 @@
-.message {
-    font-size: 20px;
+.wrapper {
+    font-size: 50px;
+    font-family: Adelle Sans; 
     text-align: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif; 
   }
   
-  .icon {
-    font-size: 36px;
-    margin: 20px 0;
-    text-align: center;
-  }

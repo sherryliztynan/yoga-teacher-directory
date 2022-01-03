@@ -1,0 +1,16 @@
+$fade-pink : #FCEADE;
+$pink : #ea526f;
+
+.profile {
+    width: 500px;
+    padding-top: 8px;
+    font-size: 20px;
+    height: 100px;
+    line-height: 25px;
+    background-color: $fade-pink;
+    color: $pink;
+    margin: 1rem auto 1rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }

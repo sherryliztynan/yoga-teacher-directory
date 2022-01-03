@@ -1,8 +1,10 @@
 import React from 'react'
+import './error.css'
 
 const Error = () => {
     return (
-        <div className="errorPageDiv">Oops! That doesn't exist!</div>
+        <div className="wrapper">Oops! That doesn't exist!</div>
+
     )
 }
 

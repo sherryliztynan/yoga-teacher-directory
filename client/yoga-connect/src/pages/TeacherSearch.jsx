@@ -4,6 +4,7 @@ import Teacher from '../components/Teachers/teacher'
 import Search from '../components/Search/search'
 import Title from '../components/Title/title'
 import ManageTeachersButton from '../components/ManageTeachersButton/manageteachersbutton'
+import '../Styles/TeacherSearchPage.scss'
 
 
 const TeacherSearch = () => {
@@ -33,8 +34,9 @@ const filterTeachers= (list, term) => list.filter(teacher => (
 
       return ( 
           <div className="teachers">
-            <Title />       
-            <Search Search term={searchTerm} setter={setSearchTerm} />
+            <Title />
+            <h1 className="h1">Enter Name Below</h1>   
+            <Search className="search" Search term={searchTerm} setter={setSearchTerm} />
             {
             filteredTeacherList.map(teacher => (
               <div className="teacher-list">

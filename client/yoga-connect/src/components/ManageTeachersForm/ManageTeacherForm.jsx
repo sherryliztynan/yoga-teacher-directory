@@ -62,7 +62,8 @@
 // export default AddTeacherForm
 
 import { useState } from 'react';
-import Axios from 'axios';
+import Axios from 'axios'; 
+import '../../Styles/ManageTeachersForm.scss'
 
 const TeacherForm = ()  => {
   const [name, setName] = useState('');
@@ -99,12 +100,12 @@ const TeacherForm = ()  => {
     });
   };
 
-  const updateTeacherCity = (id) => {
-    Axios.put("http://localhost:3002/api/teachers/:identifier", { city: newCity, id: id }).then(
+  const updateTeacherCity = (identifier) => {
+    Axios.put(`http://localhost:3002/api/teachers/${identifier}`, { city: newCity, id: identifier }).then(
       (response) => {
         setTeacherList(
           teacherList.map((teacher) => {
-            return teacher.id === id
+            return teacher.id === identifier
               ? {
                   id: teacher.id,
                   name: teacher.name,
@@ -119,19 +120,21 @@ const TeacherForm = ()  => {
     );
   };
 
-  const deleteTeacher = (id) => {
-    Axios.delete(`http://localhost:3002/api/teachers/:identifier`).then((response) => {
+  const deleteTeacher = (identifier) => {
+    Axios.delete(`http://localhost:3002/api/teachers/${identifier}`).then((response) => {
       setTeacherList(
       teacherList.filter((teacher) => {
-          return teacher.id !== id;
+          return teacher.id !== identifier;
         })
       );
     });
   };
 
+  
+
   return (
-    <div className="App">
-      <div className="information">
+    <div className="addForm">
+      <div className="input-container">
         <label>Name:</label>
         <input
           type="text"

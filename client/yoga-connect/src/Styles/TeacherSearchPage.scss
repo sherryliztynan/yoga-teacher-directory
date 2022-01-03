@@ -1,0 +1,45 @@
+$gray: #FCEADE;
+$blue: #3d7dca;
+$fade-pink : #FCEADE;
+$pink : #ea526f;
+
+.teachers {
+    margin: 0 auto;
+    padding: 0 0 1rem 0;
+    width: 900px;
+    background-color: $gray;
+    letter-spacing: 0.07rem;
+    display: flex;
+    flex-direction: column;
+
+}
+    .h1 {
+            padding: 0.5rem;
+            width: 100%;
+            font-size: 2rem;
+            color: $pink;
+            letter-spacing: 0.1rem;
+            text-align: center;
+            box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
+
+    }
+    .link {
+            color: $pink;
+    }
+    .search {
+            padding: 1rem;
+            width: 150px;
+            display: flex;
+            border-style: solid black;
+            flex-direction: column;
+            justify-content: center;
+    }
+
+    .teacher-list {
+            margin: 1rem auto 1rem auto;
+            display: flex;
+            border-style: solid black;
+            font-family: 'Lucida Sans';
+            flex-direction: column;
+            justify-content: flex-start;
+    }

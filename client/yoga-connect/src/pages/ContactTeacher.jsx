@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import GoBack from "../components/GoBack/GoBack";
 import Title from "../components/Title/title";
-// import { useParams } from "react-router-dom"
+import '../Styles/ContactTeacher.scss'
 
 
 const Teachers = (props) => {
