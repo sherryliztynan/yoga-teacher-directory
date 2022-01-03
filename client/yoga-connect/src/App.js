@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import './Styles/App.scss'
 import TeacherSearch from "./pages/TeacherSearch";
 import ContactTeacher from "./pages/ContactTeacher";
 import ManageTeachers from "./pages/ManageTeachers";
