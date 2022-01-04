@@ -1,0 +1,21 @@
+.wrapper {
+  color: #FCEADE;
+  border-width: 2px;
+  margin: 10px;
+}
+
+.wrapper:visited {
+  color: #ea526f;
+  text-decoration: none;
+  opacity: 0.42;
+}
+
+.wrapper:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.wrapper:active {
+  opacity: 1;
+  text-decoration: none;
+}

@@ -1,0 +1,120 @@
+.h2 {
+  text-align: center;
+  letter-spacing: 0.07rem;
+  font-family: 'Lucida Sans';
+  font-size: 50px;
+}
+
+.addForm {
+  margin-bottom: 0.2rem;
+}
+
+.input-container {
+  margin: 0 auto;
+  padding: 0 0 1rem 0;
+  width: 325px;
+  background-color: #dfe3ee;
+  letter-spacing: 0.07rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.teacher {
+  color: #ea526f;
+  font-size: 18px;
+}
+
+label {
+  margin-bottom: 0.2rem;
+}
+
+input {
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem;
+  height: 2rem;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+button {
+  background: #fff;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: .375rem;
+  border-style: solid;
+  border-width: .125rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #212121;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Lucida Sans';
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1;
+  padding: .875rem 1.125rem;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  -webkit-transform: translateZ(0) scale(1);
+          transform: translateZ(0) scale(1);
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
+button:not(:disabled):hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+button:not(:disabled):hover:active {
+  -webkit-transform: scale(1) translateY(0.125rem);
+          transform: scale(1) translateY(0.125rem);
+}
+
+button:focus {
+  outline: 0 solid transparent;
+}
+
+button:focus:before {
+  content: "";
+  left: calc(-1*.375rem);
+  pointer-events: none;
+  position: absolute;
+  top: calc(-1*.375rem);
+  -webkit-transition: border-radius;
+  transition: border-radius;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+button:focus:not(:focus-visible) {
+  outline: 0 solid transparent;
+}
+
+button:focus:not(:focus-visible):before {
+  border-width: 0;
+}
+
+button:not(:disabled):active {
+  -webkit-transform: translateY(0.1rem);
+          transform: translateY(0.1rem);
+}

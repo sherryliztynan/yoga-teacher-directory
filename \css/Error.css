@@ -1,0 +1,11 @@
+.wrapper {
+  color: #ea526f;
+  border-width: 2px;
+  margin: 10px;
+  font-size: 50px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: 'Lucida Sans';
+}
